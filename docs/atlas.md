@@ -24,6 +24,7 @@ which docs own which facts, and where new work should land.
 | Repo guardrails | `AGENTS.md` | Safety rules, skills, and default commands for agent work. |
 | System overview | `docs/architecture.md` | How Hermes, Peec MCP, approvals, GitHub, and measurement connect. |
 | Runtime setup | `docs/runbook.md` | How to install Hermes, configure Peec MCP, and create the weekly job. |
+| Azure infrastructure | `https://github.com/RidSib/Hermes-Cloud` | Separate Terraform/host provisioning repo; keep runtime secrets out of Git. |
 | Approval policy | `docs/approval-policy.md` | What can run automatically, what needs review, and what needs explicit approval. |
 | Active project tracker | `docs/projects/peec-visibility-operator/tasks.md` | Canonical execution state for the Peec Visibility Operator initiative. |
 | Project learnings | `docs/projects/peec-visibility-operator/learnings/README.md` | Durable notes about what helped, slowed work down, or should improve. |

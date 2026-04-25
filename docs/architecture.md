@@ -81,3 +81,21 @@ Durable state lives in Git:
 - schemas
 
 Hermes memory is useful but not authoritative.
+
+## Infrastructure Repo Boundary
+
+Azure host provisioning lives outside this public agent-ops repo in the
+separate Hermes Cloud infrastructure repo:
+
+- `https://github.com/RidSib/Hermes-Cloud`
+
+Keep the repos separate:
+
+- `bookmo-agent-ops` owns public-safe operator prompts, MCP templates, schedules,
+  approval policy, Peec memos, ledgers, and workflow docs.
+- `Hermes-Cloud` owns Azure/Terraform host provisioning and secret-file examples.
+
+Do not copy real secrets, Terraform state, provider credentials, Peec OAuth
+tokens, Telegram bot tokens, or cloud credentials into this repo. Reference the
+infrastructure repo for host setup only, and keep runtime secrets on the target
+machine or in the cloud secret manager.

@@ -10,6 +10,11 @@ The Mermaid source for this SVG lives at
 
 ## Install Hermes
 
+Azure VM provisioning is tracked separately in the Hermes Cloud infrastructure
+repo: `https://github.com/RidSib/Hermes-Cloud`. Use that repo for Terraform and
+host bootstrap work; use this repo for the Bookmo operator prompts, schedules,
+MCP templates, and public-safe outputs.
+
 ```bash
 curl -fsSL https://raw.githubusercontent.com/NousResearch/hermes-agent/main/scripts/install.sh | bash
 hermes setup
@@ -138,3 +143,11 @@ docs/peec/actions/YYYY-MM-DD.md
 
 The memo should end with approval questions before issue creation, PR drafting,
 outreach, publishing, or public posting.
+
+## Repo Boundary
+
+- Keep Azure/Terraform provisioning in `https://github.com/RidSib/Hermes-Cloud`.
+- Keep Bookmo operator instructions, schedules, public-safe reports, and action
+  ledgers in this repo.
+- Only commit `.example` secret files. Real Telegram, model-provider, Peec,
+  GitHub, cloud, or OAuth secrets stay out of Git.
