@@ -17,6 +17,44 @@ hermes model
 hermes doctor
 ```
 
+## Model Policy
+
+The local Hermes validation host keeps OpenAI Codex `gpt-5.5` as the default
+model for Peec operator work.
+
+Use the default for:
+
+- Peec MCP reads, weekly strategy memos, and action-ledger updates.
+- Repo edits, GitHub issue/PR drafting, and workflow automation.
+- Work where Codex tool use and local coding behavior are the important part.
+
+Use Claude only as an explicit switch, not as the default:
+
+- `/model opus` for independent strategy critique, positioning review,
+  red-team review, or narrative-heavy synthesis.
+- `/model sonnet` for lower-cost Claude review, copy critique, and second-pass
+  content feedback.
+
+Claude requires Anthropic auth on the Hermes host. Store the credential only in
+local Hermes auth or `~/.hermes/.env`; never commit it to this repo.
+
+```bash
+hermes auth add anthropic
+# or add ANTHROPIC_API_KEY to ~/.hermes/.env
+```
+
+The local host also defines these model aliases in `~/.hermes/config.yaml`:
+
+```yaml
+model_aliases:
+  opus:
+    model: claude-opus-4-6
+    provider: anthropic
+  sonnet:
+    model: claude-sonnet-4-6
+    provider: anthropic
+```
+
 ## Configure Peec MCP
 
 Merge `hermes/config/mcp/peec.yaml` into `~/.hermes/config.yaml`.
