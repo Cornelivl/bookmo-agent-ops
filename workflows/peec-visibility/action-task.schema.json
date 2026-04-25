@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PeecActionTask",
+  "type": "object",
+  "required": [
+    "source",
+    "category",
+    "title",
+    "recommendation",
+    "classification",
+    "risk",
+    "effort",
+    "evidence"
+  ],
+  "properties": {
+    "source": { "const": "peec" },
+    "category": {
+      "type": "string",
+      "enum": ["owned", "editorial", "reference", "ugc"]
+    },
+    "slice": { "type": "string" },
+    "target": { "type": "string" },
+    "title": { "type": "string" },
+    "recommendation": { "type": "string" },
+    "classification": {
+      "type": "string",
+      "enum": ["ship", "draft", "review", "manual", "ignore"]
+    },
+    "opportunityScore": { "type": "number" },
+    "relativeOpportunity": {
+      "type": "string",
+      "enum": ["low", "medium", "high"]
+    },
+    "gapPercentage": { "type": "number" },
+    "risk": {
+      "type": "string",
+      "enum": ["low", "medium", "high"]
+    },
+    "effort": {
+      "type": "string",
+      "enum": ["low", "medium", "high"]
+    },
+    "owner": {
+      "type": "string",
+      "enum": ["founder", "content", "engineering", "external", "agent"]
+    },
+    "evidence": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "approvalRequired": { "type": "boolean" },
+    "nextStep": { "type": "string" }
+  }
+}
+

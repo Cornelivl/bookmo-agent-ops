@@ -1,0 +1,25 @@
+# Merge this block into ~/.hermes/config.yaml on the Hermes host.
+# Peec MCP is Streamable HTTP with OAuth at https://api.peec.ai/mcp.
+# Start read-heavy and expand only after the weekly loop proves useful.
+
+mcp_servers:
+  peec-ai:
+    url: "https://api.peec.ai/mcp"
+    enabled: true
+    timeout: 120
+    connect_timeout: 60
+    tools:
+      include:
+        - list_projects
+        - get_project_profile
+        - list_models
+        - list_brands
+        - list_topics
+        - list_tags
+        - list_prompts
+        - get_actions
+        - get_domain_report
+        - get_url_report
+      resources: false
+      prompts: false
+

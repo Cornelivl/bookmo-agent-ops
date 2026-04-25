@@ -1,0 +1,16 @@
+.env
+.env.*
+!.env.example
+
+# Hermes local state and generated outputs
+.hermes/
+outputs/**/*.json
+outputs/**/*.md
+!outputs/**/.gitkeep
+
+# Runtime/editor noise
+.DS_Store
+node_modules/
+dist/
+tmp/
+
