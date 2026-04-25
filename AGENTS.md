@@ -46,6 +46,7 @@ Available core skills:
 - `brave-search` for external research.
 - `agent-browser` for browser/UI automation.
 - `architecture-docs` for system docs.
+- `pretty-mermaid` for rendering Mermaid diagrams to SVG or ASCII.
 - `create-cli` for command/workflow UX.
 - `markdown-converter` for document ingestion.
 

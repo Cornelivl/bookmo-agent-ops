@@ -1,5 +1,13 @@
 # Runbook
 
+## Setup Flow
+
+![Peec Visibility Operator setup flow](assets/peec-visibility-setup.svg)
+
+The Mermaid source for this SVG lives at
+`docs/assets/peec-visibility-setup.mmd`. The same diagram is embedded in
+`docs/architecture.md` for renderers that support Mermaid directly.
+
 ## Install Hermes
 
 ```bash
@@ -12,6 +20,9 @@ hermes doctor
 ## Configure Peec MCP
 
 Merge `hermes/config/mcp/peec.yaml` into `~/.hermes/config.yaml`.
+The Peec endpoint is path-scoped at `https://api.peec.ai/mcp`; keep the
+`oauth.preserve_server_url: true` setting from the template so OAuth resource
+validation uses the full `/mcp` URL instead of only `https://api.peec.ai`.
 
 Peec uses OAuth for MCP. Do not put Peec credentials in this repo or in
 `~/.hermes/.env`; Hermes stores MCP OAuth tokens under its runtime home.

@@ -1,13 +1,3 @@
-# Architecture
-
-Hermes is the runtime for Bookmo's Peec Visibility Operator. This repo owns the
-public-safe prompts, schedules, MCP templates, approval policy, and durable
-strategy output that guide the operator.
-
-The setup flow is also exported as an SVG for docs surfaces that do not render
-Mermaid directly: [`docs/assets/peec-visibility-setup.svg`](assets/peec-visibility-setup.svg).
-
-```mermaid
 flowchart TD
     Repo[Bookmo agent-ops repo]
     Template[Peec MCP config template]
@@ -47,23 +37,3 @@ flowchart TD
     class Runtime,LocalConfig,Weekly runtime
     class OAuth,Peec external
     class Memo,Review,Actions,Measure output
-```
-
-## Runtime Components
-
-- Hermes Agent installed on a local machine or VPS.
-- Peec MCP remote HTTP server at `https://api.peec.ai/mcp`.
-- Optional GitHub MCP or local `gh` CLI.
-- Repo-local strategy output under `docs/peec/actions/`.
-
-## State
-
-Durable state lives in Git:
-
-- prompts
-- policies
-- project tracker
-- weekly reports
-- schemas
-
-Hermes memory is useful but not authoritative.
