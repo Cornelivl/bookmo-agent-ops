@@ -1,9 +1,11 @@
 # Bookmo Agent Ops
 
-Private operations repo for Bookmo's agentic workflows.
+Public operations repo for Bookmo's agentic workflows.
 
 This repo is not a fork of Hermes. Hermes is the runtime; this repo owns the
-Bookmo-specific configuration, prompts, approval rules, and workflow memory.
+Bookmo-specific configuration, prompts, approval rules, and public-safe workflow
+memory. Do not store secrets, lead details, account identifiers, or sensitive
+strategy notes here unless they are redacted.
 
 ## First Workflow
 
@@ -12,7 +14,7 @@ Bookmo-specific configuration, prompts, approval rules, and workflow memory.
 1. Read Peec projects, brands, prompts, topics, tags, and actions.
 2. Drill into owned, editorial, reference, and UGC recommendations.
 3. Rank work by opportunity, relevance, effort, risk, and confidence.
-4. Produce a markdown strategy memo under `docs/peec/actions/`.
+4. Produce a public-safe markdown strategy memo under `docs/peec/actions/`.
 5. Create issues or draft PRs only after explicit approval.
 
 ## Hermes Setup
@@ -39,9 +41,8 @@ Useful upstream docs:
 
 Default posture:
 
-- Auto: read Peec, draft summaries, write local strategy docs.
+- Auto: read Peec, draft summaries, write public-safe local strategy docs.
 - Review: create GitHub issues, draft PRs, write content briefs.
 - Manual approval: publish public content, send outreach, post in communities,
   or make competitor claims.
 - Never by default: delete Peec data, send emails, post publicly, or deploy.
-
