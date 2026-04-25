@@ -3,13 +3,18 @@
 Use Peec as the source of truth. Do not invent recommendations, targets, or
 domains.
 
+This repo is public. Any memo or task file written into this repo must be
+public-safe and redacted.
+
 ## Required Data
 
+- Project profile for the Bookmo Peec project.
 - Overview actions for the last 30 days.
 - Drill-down text for the top owned slices.
 - Drill-down text for the top editorial/reference/UGC slices when present.
 - Current brands and domains.
 - Current prompts, topics, and tags.
+- Domain or URL reports when needed to validate a recommendation.
 
 ## Output
 
@@ -20,9 +25,20 @@ Write a markdown memo with:
 3. Owned opportunities.
 4. Earned opportunities.
 5. Rejected/noisy recommendations.
-6. Proposed GitHub issues or PRs.
+6. Schema-compatible candidate tasks.
 7. Approval questions.
 8. Measurement plan for 7/14/30 days.
+
+For each candidate task include:
+
+- category: `owned`, `editorial`, `reference`, or `ugc`
+- classification: `ship`, `draft`, `review`, `manual`, or `ignore`
+- automation lane: `autopilot`, `review`, `explicit_approval`, or `blocked`
+- current state: start as `candidate` unless already approved or rejected
+- risk and effort
+- evidence summary
+- approval required
+- smallest useful next step
 
 ## Ranking
 
@@ -43,4 +59,6 @@ Rank by:
 - UGC posting requires review.
 - Public page publishing requires review.
 - Read-only analysis can be automatic.
-
+- Sending email or posting to social/community channels requires explicit human approval.
+- Peec write/mutation tools require explicit human approval.
+- Do not include secrets, private lead details, raw account identifiers, or sensitive channel/account operations in committed output.

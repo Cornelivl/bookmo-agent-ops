@@ -8,6 +8,8 @@
     "title",
     "recommendation",
     "classification",
+    "automationLane",
+    "state",
     "risk",
     "effort",
     "evidence"
@@ -25,6 +27,29 @@
     "classification": {
       "type": "string",
       "enum": ["ship", "draft", "review", "manual", "ignore"]
+    },
+    "automationLane": {
+      "type": "string",
+      "enum": ["autopilot", "review", "explicit_approval", "blocked"]
+    },
+    "state": {
+      "type": "string",
+      "enum": [
+        "candidate",
+        "reviewed",
+        "approved",
+        "rejected",
+        "drafted",
+        "implemented",
+        "measuring_7d",
+        "measuring_14d",
+        "measuring_30d",
+        "closed_keep",
+        "closed_improve",
+        "closed_retry",
+        "closed_ignore"
+      ],
+      "default": "candidate"
     },
     "opportunityScore": { "type": "number" },
     "relativeOpportunity": {
@@ -49,7 +74,37 @@
       "items": { "type": "string" }
     },
     "approvalRequired": { "type": "boolean" },
+    "publicSafety": {
+      "type": "object",
+      "properties": {
+        "safeForPublicRepo": { "type": "boolean" },
+        "redactionsNeeded": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "notes": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "measurementPlan": {
+      "type": "object",
+      "properties": {
+        "baselineNeeded": { "type": "boolean" },
+        "metrics": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "checkpoints": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["7d", "14d", "30d"]
+          }
+        },
+        "peecDataWindowNote": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
     "nextStep": { "type": "string" }
   }
 }
-
