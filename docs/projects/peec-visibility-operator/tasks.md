@@ -89,6 +89,7 @@ Peec AI surfaces AI-search visibility gaps, cited sources, competitive mentions,
 ## Impacted Areas
 
 - `AGENTS.md`
+- `docs/atlas.md`
 - `README.md`
 - `docs/architecture.md`
 - `docs/approval-policy.md`
@@ -144,6 +145,7 @@ Peec AI surfaces AI-search visibility gaps, cited sources, competitive mentions,
 - [x] Milestone 3 - Add Hermes MCP templates. Acceptance: Peec MCP config points at the documented Streamable HTTP endpoint. Validate: `sed -n '1,220p' hermes/config/mcp/peec.yaml`.
 - [x] Milestone 4 - Add Peec operator prompts and schedule. Acceptance: strategist, reviewer, and weekly schedule docs exist. Validate: inspect `hermes/prompts/` and `hermes/config/schedules/`.
 - [x] Milestone 5 - Add approval policy and runbook. Acceptance: public/outbound actions require approval. Validate: inspect `docs/approval-policy.md` and `docs/runbook.md`.
+- [x] Milestone 5a - Add repo atlas. Acceptance: `docs/atlas.md` routes docs, workflows, and active project state. Validate: inspect `docs/atlas.md`.
 - [ ] Milestone 6 - Configure Hermes runtime. Acceptance: Hermes host is selected, config is merged, and `hermes doctor` passes. Validate: run `hermes doctor` on the host.
 - [ ] Milestone 7 - Authorize and smoke-test Peec MCP. Acceptance: Hermes can list Peec projects and active tools. Validate: ask Hermes to list tools and list Peec AI projects.
 - [ ] Milestone 8 - Produce first live Peec strategy memo. Acceptance: `docs/peec/actions/YYYY-MM-DD.md` exists and is grounded in live Peec data. Validate: manually review cited Peec actions, reports, and approval questions.
@@ -220,6 +222,7 @@ Peec AI surfaces AI-search visibility gaps, cited sources, competitive mentions,
 | done | Refresh tracker into a full closed-loop Hermes + Peec SEO/GEO/GTM optimization plan | parent | `docs/projects/peec-visibility-operator/tasks.md` |
 | done | Run skeptical review pass and fold high-signal risks into the tracker | parent | `docs/projects/peec-visibility-operator/tasks.md` |
 | done | Bootstrap project learnings file for future closeout | parent | `docs/projects/peec-visibility-operator/learnings/README.md` |
+| done | Add repo atlas and link docs router from README/AGENTS | parent | `docs/atlas.md` |
 | todo | Select the Hermes runtime host and verify local runtime prerequisites | parent | `docs/runbook.md` |
 
 ## Backlog / Remaining Work
@@ -271,3 +274,4 @@ Peec AI surfaces AI-search visibility gaps, cited sources, competitive mentions,
 - 2026-04-25: [DONE] Refreshed project tracker into a closed-loop Hermes + Peec SEO/GEO/GTM optimization plan with approval-gated email/social capability expansion.
 - 2026-04-25: [DONE] Ran skeptical review pass and folded in automation lanes, action state, GTM evidence, Peec refresh-lag handling, and capability-gating requirements.
 - 2026-04-25: [DONE] Updated project posture to treat `bookmo-agent-ops` as intentionally public and require public-safe/redacted committed outputs.
+- 2026-04-25: [DONE] Added `docs/atlas.md` as the repo navigation layer and linked it from `AGENTS.md` and `README.md`.

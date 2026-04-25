@@ -27,6 +27,14 @@ belong here.
 
 - `docs/projects/peec-visibility-operator/tasks.md`
 
+## Docs Router
+
+- Start with `docs/atlas.md` when deciding where a change belongs.
+- Use `docs/architecture.md` for the system overview and component flow.
+- Use `docs/runbook.md` for setup and operational commands.
+- Use `docs/approval-policy.md` for permission boundaries.
+- Use `docs/projects/<slug>/tasks.md` for active long-running work.
+
 ## Local Skills
 
 This repo intentionally links a small shared-skill set into `.agents`,

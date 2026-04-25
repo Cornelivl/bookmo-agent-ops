@@ -17,6 +17,14 @@ strategy notes here unless they are redacted.
 4. Produce a public-safe markdown strategy memo under `docs/peec/actions/`.
 5. Create issues or draft PRs only after explicit approval.
 
+## Docs
+
+- Repo map: `docs/atlas.md`
+- System overview: `docs/architecture.md`
+- Runtime runbook: `docs/runbook.md`
+- Approval policy: `docs/approval-policy.md`
+- Active tracker: `docs/projects/peec-visibility-operator/tasks.md`
+
 ## Hermes Setup
 
 Install Hermes from the upstream project:
