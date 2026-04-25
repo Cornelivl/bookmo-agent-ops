@@ -33,8 +33,7 @@ belong here.
 - Use Peec through Hermes rather than assuming Peec tools are exposed directly in
   every agent session.
 - Live discovery is authoritative: `hermes mcp test peec-ai` last verified 37
-  tools, and Bookmo appears in `list_projects` as `bookmo` /
-  `or_f6b948e9-4f91-4a52-944f-c7324fae7ac1`.
+  tools, and Bookmo appears in `list_projects`.
 - Keep the configured Peec endpoint as `https://api.peec.ai/mcp` with OAuth and
   path-preserving resource validation.
 

@@ -17,8 +17,8 @@ Read and follow these files during each scheduled or ad hoc run:
 
 ## Inputs
 
-- Bookmo Peec project id: `or_f6b948e9-4f91-4a52-944f-c7324fae7ac1`
-- Bookmo Peec brand id: `kw_8843c6ab-20ed-46a7-85ec-9d29272763dc`
+- Bookmo Peec project: resolve from `list_projects` at runtime.
+- Bookmo Peec brand: resolve from `list_brands` at runtime.
 - Preferred resolution: `day`
 - Canonical site: `https://www.bookmo.ai/`
 - Product repo: `Cornelivl/booking-agent-crm`
