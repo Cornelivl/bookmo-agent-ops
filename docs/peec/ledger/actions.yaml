@@ -1,0 +1,53 @@
+# Public-safe Peec action ledger.
+# Keep exact private Peec scores and raw prompt lists out of this file.
+
+actions:
+  - id: peec-2026-04-25-owned-product-comparison-brief
+    source: peec
+    project: bookmo
+    category: owned
+    decision_lane: quick_win
+    classification: draft
+    automation_lane: autopilot
+    state: drafted
+    title: Content brief for Bookmo owned product/comparison page cluster
+    recommendation: >-
+      Draft a Bookmo-owned product/comparison landing page brief for music
+      booking agency CRM and artist-management workflow automation before any
+      issue, PR, or public page implementation.
+    evidence_summary:
+      - Peec's strongest relative opportunity bands are owned homepage and product-page coverage.
+      - Medium owned opportunity also exists for comparison, alternative, and listicle pages.
+      - The current public-safe source memo reports no own-domain source visibility in the checked window.
+    risk: low_for_brief_medium_for_public_page
+    effort: small_for_brief_medium_for_implementation
+    owner: agent_for_brief_founder_for_claim_review
+    artifact: docs/peec/actions/2026-04-25-owned-product-comparison-brief.md
+    source_memo: docs/peec/actions/2026-04-25.md
+    approval_required_before:
+      - creating GitHub issue in booking-agent-crm
+      - drafting PR against booking-agent-crm
+      - publishing public page
+      - making direct competitor claims
+    baseline_needed: true
+    measurement:
+      checkpoints:
+        - 7d
+        - 14d
+        - 30d
+      provisional_dates_after_2026_04_25_if_published_immediately:
+        7d: 2026-05-02
+        14d: 2026-05-09
+        30d: 2026-05-25
+      metrics_public_safe:
+        - owned opportunity band movement
+        - whether bookmo.ai appears in domain or URL source reports
+        - whether any Bookmo-owned URL is retrieved for target theme cluster
+      peec_data_window_note: >-
+        Record the actual Peec data window during each measurement check and
+        account for crawl/retrieval refresh lag before judging the action.
+    self_improvement_note: >-
+      If the page brief leads to measurable owned-source visibility movement,
+      convert the outline and measurement checklist into a repeatable owned-page
+      playbook. If flat after the refresh window, review discoverability, page
+      quality, and intent fit before repeating.
