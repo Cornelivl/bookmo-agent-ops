@@ -223,16 +223,18 @@ Peec AI surfaces AI-search visibility gaps, cited sources, competitive mentions,
 | done | Run skeptical review pass and fold high-signal risks into the tracker | parent | `docs/projects/peec-visibility-operator/tasks.md` |
 | done | Bootstrap project learnings file for future closeout | parent | `docs/projects/peec-visibility-operator/learnings/README.md` |
 | done | Add repo atlas and link docs router from README/AGENTS | parent | `docs/atlas.md` |
-| todo | Select the Hermes runtime host and verify local runtime prerequisites | parent | `docs/runbook.md` |
+| done | Select local Hermes as temporary validation host and verify local runtime prerequisites | parent | `docs/runbook.md` |
+| done | Complete Peec OAuth and verify Bookmo project listing from local Hermes | parent | `~/.hermes/config.yaml` |
+| todo | Produce the first live Peec strategy memo with conservative redaction | parent | `docs/peec/actions/YYYY-MM-DD.md` |
 
 ## Backlog / Remaining Work
 
-- [ ] Select and document the Hermes runtime host.
+- [x] Select and document local Hermes as the temporary validation host; Azure VM remains the later recurring-job host.
 - [ ] Define the redaction policy for public-safe strategy, ledger, and measurement outputs.
-- [ ] Merge Peec MCP config into `~/.hermes/config.yaml` on the host.
-- [ ] Run `hermes doctor` on the host and record the result.
-- [ ] Complete Peec OAuth and verify "List my Peec AI projects".
-- [ ] Refresh `hermes/config/mcp/peec.yaml` against live tool discovery, including whether write tools appear.
+- [x] Merge Peec MCP config into local `~/.hermes/config.yaml` on the temporary validation host.
+- [x] Run `hermes doctor` on the local host and record the result.
+- [x] Complete Peec OAuth and verify "List my Peec AI projects".
+- [x] Refresh `hermes/config/mcp/peec.yaml` against live tool discovery, including whether write tools appear.
 - [ ] Add a Peec source-of-truth prompt that forces `overview` before action drill-down.
 - [ ] Create `docs/peec/actions/` memo template.
 - [ ] Create `docs/peec/measurements/` follow-up template.
@@ -275,3 +277,5 @@ Peec AI surfaces AI-search visibility gaps, cited sources, competitive mentions,
 - 2026-04-25: [DONE] Ran skeptical review pass and folded in automation lanes, action state, GTM evidence, Peec refresh-lag handling, and capability-gating requirements.
 - 2026-04-25: [DONE] Updated project posture to treat `bookmo-agent-ops` as intentionally public and require public-safe/redacted committed outputs.
 - 2026-04-25: [DONE] Added `docs/atlas.md` as the repo navigation layer and linked it from `AGENTS.md` and `README.md`.
+- 2026-04-25: [DONE] Selected local Hermes as the temporary validation host, merged Peec MCP config into local `~/.hermes/config.yaml`, created a config backup, and verified `hermes doctor` still passes with warnings only.
+- 2026-04-25: [DONE] Resolved Peec OAuth protected-resource mismatch by preserving the full `/mcp` URL during OAuth, completed browser OAuth locally, verified `hermes mcp test peec-ai` discovers 37 live tools, and verified Bookmo appears in `list_projects` as `bookmo` / `or_f6b948e9-4f91-4a52-944f-c7324fae7ac1`.
