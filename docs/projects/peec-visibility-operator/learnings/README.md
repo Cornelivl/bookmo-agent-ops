@@ -8,7 +8,7 @@
 
 ## What Helped
 
-- Repo-local `AGENTS.md` already defines the private operations repo boundary and says long-running work belongs in `docs/projects/<slug>/tasks.md`.
+- Repo-local `AGENTS.md` defines the operations repo boundary and says long-running work belongs in `docs/projects/<slug>/tasks.md`.
 - Existing scaffold already includes Peec MCP config, strategist/reviewer prompts, approval policy, runbook, and architecture docs.
 - Peec's public MCP docs provide a clear endpoint, OAuth setup path, tool reference, and action-drilldown workflow.
 
@@ -16,6 +16,7 @@
 
 - The existing tracker was useful but too memo-oriented for the expanded closed-loop operator goal.
 - Peec public materials contain version drift: a launch blog describes read-only MCP, while current docs list write tools. Live Hermes tool discovery needs to be treated as authoritative.
+- The repo is intentionally public, so future outputs need a redaction/public-safety pass before commit.
 
 ## Improvement Opportunities
 
@@ -49,4 +50,4 @@
 ## Notes For Future Runs
 
 - Treat Peec `get_actions` as the primary next-action signal, but require Bookmo relevance and evidence-quality review before execution.
-- Keep public actions human-approved even after the agent proves useful; drafts and private artifacts are the safe automation boundary.
+- Keep public actions human-approved even after the agent proves useful; drafts, redacted docs, and non-public artifacts are the safe automation boundary.
