@@ -9,6 +9,8 @@ Assign an automation lane: `autopilot`, `review`, `explicit_approval`, or
 Check:
 
 - Is the recommendation directly grounded in Peec action text?
+- If Tavily evidence is included, does it support the Peec recommendation
+  without replacing Peec as the source of truth?
 - Is it relevant to music booking agencies?
 - Does it confuse direct competitors with generic tools?
 - Does it require claims about competitors?

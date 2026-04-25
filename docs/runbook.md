@@ -55,6 +55,31 @@ If config changes while Hermes is running:
 /reload-mcp
 ```
 
+## Configure Tavily MCP
+
+Merge `hermes/config/mcp/tavily.yaml` into `~/.hermes/config.yaml`.
+Tavily is used for public web research that supports Peec recommendations:
+source validation, public citation gathering, current SERP context, and page
+content extraction.
+
+Prefer OAuth against `https://mcp.tavily.com/mcp/`. Tavily also supports API-key
+configuration, but do not commit an API key or an API-key-bearing MCP URL. If a
+Hermes host cannot complete OAuth, store `TAVILY_API_KEY` only in
+`~/.hermes/.env` and adapt the host-local config outside this repo.
+
+After merging the template, start Hermes and verify:
+
+```text
+Tell me which Tavily MCP tools are available.
+Search the public web for Bookmo AI and summarize the top public sources.
+```
+
+If config changes while Hermes is running:
+
+```text
+/reload-mcp
+```
+
 ## Create Weekly Job
 
 Use the command in `hermes/config/schedules/weekly-peec-visibility.md`.

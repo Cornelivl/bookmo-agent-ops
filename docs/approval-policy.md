@@ -3,6 +3,7 @@
 ## Automatic
 
 - Read Peec data.
+- Search and extract public web sources through Tavily.
 - Summarize actions.
 - Rank and classify opportunities.
 - Write public-safe local markdown reports.
@@ -40,4 +41,6 @@ public viewing.
 - Generic CRM recommendations that dilute the music-ops signal.
 - False-positive domains such as `bookingholdings.com`.
 - Unverified competitor claims.
+- Treat Tavily search results as supporting public evidence, not as the source
+  of truth for Peec-derived recommendations.
 - Any action that cannot be measured or explained.

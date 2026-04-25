@@ -15,6 +15,17 @@ Peec MCP tools:
 - `get_domain_report`
 - `get_url_report`
 
+Tavily MCP tools:
+
+- `tavily-search`
+- `tavily-extract`
+
+Use Tavily only for public web research that supports Peec-derived decisions:
+validating candidate source pages, extracting public reference content, finding
+current citations, and checking the public basis for competitor or category
+claims. Do not let Tavily search results create recommendations that are not
+grounded in Peec actions.
+
 ## Weekly Flow
 
 1. Pull overview actions.
@@ -25,9 +36,13 @@ Peec MCP tools:
    - UGC by domain
 4. Normalize each recommendation into `workflows/peec-visibility/action-task.schema.json`.
 5. Classify each task with `hermes/prompts/peec-action-reviewer.md`.
-6. Assign an automation lane and state from `action-task.schema.json`.
-7. Write a public-safe `docs/peec/actions/YYYY-MM-DD.md` memo.
-8. Ask for human approval before creating GitHub issues, drafting PRs, drafting outreach, posting publicly, publishing, mutating Peec data, adding credentials, or deploying.
+6. Use Tavily to validate public targets and gather public citation links for
+   the highest-value candidates when the Peec evidence alone is not enough.
+7. Assign an automation lane and state from `action-task.schema.json`.
+8. Write a public-safe `docs/peec/actions/YYYY-MM-DD.md` memo.
+9. Ask for human approval before creating GitHub issues, drafting PRs, drafting
+   outreach, posting publicly, publishing, mutating Peec data, adding
+   credentials, or deploying.
 
 ## Bookmo Constants
 
