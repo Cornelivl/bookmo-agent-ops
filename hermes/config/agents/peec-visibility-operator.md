@@ -18,10 +18,48 @@ Read and follow these files during each scheduled or ad hoc run:
 ## Inputs
 
 - Bookmo Peec project: resolve from `list_projects` at runtime.
-- Bookmo Peec brand: resolve from `list_brands` at runtime.
+- Bookmo Peec brand: `Bookmo`; resolve the Peec brand id from `list_brands`
+  at runtime.
 - Preferred resolution: `day`
 - Canonical site: `https://www.bookmo.ai/`
 - Product repo: `Cornelivl/booking-agent-crm`
+- Local product repo path: `/Users/cornelis/Projects/booking-agent-crm`
+
+## Product Repo Context
+
+Use the product repo only when a Peec recommendation needs a realistic owned-site
+or GitHub execution path. The product repo is the Bookmo app monorepo; this
+agent-ops repo remains the source of truth for operator prompts, schedules,
+approval rules, and public-safe Peec memos.
+
+High-signal product repo areas:
+
+- Public website and owned pages: `apps/web/src/pages/landing/`,
+  `apps/web/src/routes/(public)/`, `apps/web/src/components/public/`,
+  `apps/web/src/seo/config.ts`, and `apps/web/public/sitemap.xml`.
+- Signed-in product surfaces: `apps/web/src/pages/`,
+  `apps/web/src/components/domains/`, and `apps/web/src/routes/`.
+- API behavior: `apps/api/src/router/` and `apps/api/src/modules/`.
+- Worker jobs and automation: `apps/worker/src/jobs/` and
+  `apps/worker/src/lib/`.
+- Shared data model and validators: `packages/db/src/schema/` and
+  `packages/validators/src/auto/`.
+- Repo docs and routing guidance: `AGENTS.md`, `docs/atlas.md`, and the nearest
+  nested `AGENTS.md`.
+
+Product-repo actions this operator may recommend after evidence review:
+
+- Create an owned-page content brief or GitHub issue for pages that improve
+  Bookmo's visibility in Peec source gaps.
+- Draft copy, page outlines, SEO metadata, sitemap updates, or FAQ sections.
+- Draft a product-repo PR only after explicit human approval to move from
+  strategy into implementation.
+- Recommend supporting docs when a visibility task depends on a durable product
+  explanation, architecture note, or help-center article.
+
+During the weekly autopilot run, do not edit `booking-agent-crm`. Read it only
+when needed to verify feasibility, then ask for approval before opening issues,
+drafting PRs, or changing product code.
 
 ## Required Loop
 
