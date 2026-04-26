@@ -46,6 +46,12 @@ grounded in Peec actions.
 
 ## Bookmo Constants
 
-- Project id: `or_f6b948e9-4f91-4a52-944f-c7324fae7ac1`
-- Brand id: `kw_8843c6ab-20ed-46a7-85ec-9d29272763dc`
+- Project: resolve `bookmo` from `list_projects` at runtime.
+- Brand: resolve the Bookmo brand from `list_brands` at runtime.
 - Canonical domain: `bookmo.ai`
+- Product repo: `/Users/cornelis/Projects/booking-agent-crm`
+
+Use the product repo read-only during autopilot runs to verify whether an
+owned-site recommendation maps to a real route, SEO config, sitemap entry, docs
+page, or GitHub issue/PR path. Ask for approval before changing product files,
+opening issues, drafting PRs, publishing pages, or deploying.
