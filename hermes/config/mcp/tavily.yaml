@@ -1,0 +1,18 @@
+# Merge this block into ~/.hermes/config.yaml on the Hermes host.
+# Tavily MCP is a remote web research MCP at https://mcp.tavily.com/mcp/.
+# Use OAuth for the default Hermes setup so API keys are not embedded in URLs or
+# committed config. Keep this server read-only and research-scoped.
+
+mcp_servers:
+  tavily:
+    url: "https://mcp.tavily.com/mcp/"
+    auth: "oauth"
+    enabled: true
+    timeout: 120
+    connect_timeout: 60
+    tools:
+      include:
+        - tavily-search
+        - tavily-extract
+      resources: false
+      prompts: false

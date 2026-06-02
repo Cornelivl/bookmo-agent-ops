@@ -225,7 +225,10 @@ Peec AI surfaces AI-search visibility gaps, cited sources, competitive mentions,
 | done | Add repo atlas and link docs router from README/AGENTS | parent | `docs/atlas.md` |
 | done | Select local Hermes as temporary validation host and verify local runtime prerequisites | parent | `docs/runbook.md` |
 | done | Complete Peec OAuth and verify Bookmo project listing from local Hermes | parent | `~/.hermes/config.yaml` |
-| todo | Produce the first live Peec strategy memo with conservative redaction | parent | `docs/peec/actions/YYYY-MM-DD.md` |
+| done | Wire Hermes weekly job to agent, strategist, reviewer, approval policy, and task schema instructions | parent | `hermes/config/agents/peec-visibility-operator.md` |
+| done | Produce the first live Peec strategy memo with conservative redaction | parent | `docs/peec/actions/2026-04-25.md` |
+| done | Draft first selected owned/content artifact from the Peec memo | parent | `docs/peec/actions/2026-04-25-owned-product-comparison-brief.md` |
+| todo | Review/approve the owned content brief and decide issue vs PR vs content-only expansion | user | `docs/peec/actions/2026-04-25-owned-product-comparison-brief.md` |
 
 ## Backlog / Remaining Work
 
@@ -235,16 +238,17 @@ Peec AI surfaces AI-search visibility gaps, cited sources, competitive mentions,
 - [x] Run `hermes doctor` on the local host and record the result.
 - [x] Complete Peec OAuth and verify "List my Peec AI projects".
 - [x] Refresh `hermes/config/mcp/peec.yaml` against live tool discovery, including whether write tools appear.
-- [ ] Add a Peec source-of-truth prompt that forces `overview` before action drill-down.
+- [x] Add a Peec source-of-truth prompt that forces `overview` before action drill-down.
 - [ ] Create `docs/peec/actions/` memo template.
 - [ ] Create `docs/peec/measurements/` follow-up template.
-- [ ] Create `docs/peec/ledger/` and define the action state machine fields.
-- [ ] Design and add the action ledger schema/template.
-- [ ] Produce the first live weekly strategy memo.
+- [x] Create `docs/peec/ledger/` and define the action state machine fields.
+- [x] Design and add the action ledger schema/template.
+- [x] Produce the first live weekly strategy memo.
 - [ ] Review and approve one owned/content action for implementation.
+- [x] Create the first safe content brief draft from the selected Peec-owned action.
 - [ ] Create the first approved GitHub issue, PR draft, or content brief.
 - [ ] Add a measurement follow-up schedule for the first approved action.
-- [ ] Update approval policy for email/social draft-vs-send boundaries.
+- [x] Update approval policy for email/social draft-vs-send boundaries.
 - [ ] Add email capability plan with credential location, tool choice, draft-only test, and approval gate.
 - [ ] Add social/community capability plan with target platforms, account-risk constraints, draft-only test, and approval gate.
 - [ ] Add a capability gate matrix covering Peec, GitHub, email, social/community, browser, and target repo access.
@@ -278,4 +282,7 @@ Peec AI surfaces AI-search visibility gaps, cited sources, competitive mentions,
 - 2026-04-25: [DONE] Updated project posture to treat `bookmo-agent-ops` as intentionally public and require public-safe/redacted committed outputs.
 - 2026-04-25: [DONE] Added `docs/atlas.md` as the repo navigation layer and linked it from `AGENTS.md` and `README.md`.
 - 2026-04-25: [DONE] Selected local Hermes as the temporary validation host, merged Peec MCP config into local `~/.hermes/config.yaml`, created a config backup, and verified `hermes doctor` still passes with warnings only.
-- 2026-04-25: [DONE] Resolved Peec OAuth protected-resource mismatch by preserving the full `/mcp` URL during OAuth, completed browser OAuth locally, verified `hermes mcp test peec-ai` discovers 37 live tools, and verified Bookmo appears in `list_projects` as `bookmo` / `or_f6b948e9-4f91-4a52-944f-c7324fae7ac1`.
+- 2026-04-25: [DONE] Wired Hermes runtime instructions to read the operator prompt, strategist prompt, reviewer prompt, approval policy, and task schema; updated the schema with automation lane, action state, public-safety, and measurement fields.
+- 2026-04-25: [DONE] Resolved Peec OAuth protected-resource mismatch by preserving the full `/mcp` URL during OAuth, completed browser OAuth locally, verified `hermes mcp test peec-ai` discovers 37 live tools, and verified Bookmo appears in `list_projects`; raw account identifiers are intentionally omitted from this public repo.
+- 2026-04-25: [DONE] Produced the first live public-safe Peec SEO/GEO/GTM strategy memo at `docs/peec/actions/2026-04-25.md`, added a self-improving ranking lane system, selected an owned product/comparison content task as the first action, and drafted `docs/peec/actions/2026-04-25-owned-product-comparison-brief.md`.
+- 2026-04-25: [DONE] Added the first public-safe action ledger files at `docs/peec/ledger/README.md` and `docs/peec/ledger/actions.yaml` so recommendations can self-improve through baseline, 7/14/30 day checks, and keep/improve/retry/ignore outcomes.

@@ -1,12 +1,14 @@
 flowchart TD
     Repo[Bookmo agent-ops repo]
-    Template[Peec MCP config template]
+    Template[Peec MCP config templates]
     Prompts[Hermes prompts and schedule]
     Policy[Approval policy]
     Runtime[Hermes runtime]
     LocalConfig[Local Hermes config]
     OAuth[OAuth browser approval]
     Peec[Peec MCP]
+    Tavily[Tavily MCP]
+    PublicWeb[Public web sources]
     Weekly[Weekly visibility job]
     Memo[Public-safe strategy memo]
     Review[Human approval gate]
@@ -20,6 +22,8 @@ flowchart TD
     LocalConfig --> Runtime
     OAuth --> Runtime
     Runtime --> Peec
+    Runtime --> Tavily
+    Tavily --> PublicWeb
     Prompts --> Weekly
     Runtime --> Weekly
     Weekly --> Memo
@@ -35,5 +39,5 @@ flowchart TD
 
     class Repo,Template,Prompts,Policy repo
     class Runtime,LocalConfig,Weekly runtime
-    class OAuth,Peec external
+    class OAuth,Peec,Tavily,PublicWeb external
     class Memo,Review,Actions,Measure output

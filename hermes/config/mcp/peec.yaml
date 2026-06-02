@@ -6,6 +6,11 @@ mcp_servers:
   peec-ai:
     url: "https://api.peec.ai/mcp"
     auth: "oauth"
+    oauth:
+      # Peec's protected-resource metadata is path-scoped to /mcp. Preserve the
+      # full MCP endpoint URL during OAuth resource validation instead of
+      # reducing it to the API origin.
+      preserve_server_url: true
     enabled: true
     timeout: 120
     connect_timeout: 60

@@ -50,7 +50,9 @@ Useful upstream docs:
 Default posture:
 
 - Auto: read Peec, draft summaries, write public-safe local strategy docs.
+- Auto: read the local `booking-agent-crm` repo for feasibility checks when a
+  Peec recommendation maps to owned-site, SEO, docs, or GitHub work.
 - Review: create GitHub issues, draft PRs, write content briefs.
 - Manual approval: publish public content, send outreach, post in communities,
-  or make competitor claims.
+  merge or deploy product changes, or make competitor claims.
 - Never by default: delete Peec data, send emails, post publicly, or deploy.

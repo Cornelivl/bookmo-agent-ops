@@ -10,13 +10,15 @@ Mermaid directly: [`docs/assets/peec-visibility-setup.svg`](assets/peec-visibili
 ```mermaid
 flowchart TD
     Repo[Bookmo agent-ops repo]
-    Template[Peec MCP config template]
+    Template[Peec MCP config templates]
     Prompts[Hermes prompts and schedule]
     Policy[Approval policy]
     Runtime[Hermes runtime]
     LocalConfig[Local Hermes config]
     OAuth[OAuth browser approval]
     Peec[Peec MCP]
+    Tavily[Tavily MCP]
+    PublicWeb[Public web sources]
     Weekly[Weekly visibility job]
     Memo[Public-safe strategy memo]
     Review[Human approval gate]
@@ -30,6 +32,8 @@ flowchart TD
     LocalConfig --> Runtime
     OAuth --> Runtime
     Runtime --> Peec
+    Runtime --> Tavily
+    Tavily --> PublicWeb
     Prompts --> Weekly
     Runtime --> Weekly
     Weekly --> Memo
@@ -45,7 +49,7 @@ flowchart TD
 
     class Repo,Template,Prompts,Policy repo
     class Runtime,LocalConfig,Weekly runtime
-    class OAuth,Peec external
+    class OAuth,Peec,Tavily,PublicWeb external
     class Memo,Review,Actions,Measure output
 ```
 
@@ -53,8 +57,18 @@ flowchart TD
 
 - Hermes Agent installed on a local machine or VPS.
 - Peec MCP remote HTTP server at `https://api.peec.ai/mcp`.
+- Tavily MCP remote HTTP server at `https://mcp.tavily.com/mcp/` for public
+  web search and source extraction.
 - Optional GitHub MCP or local `gh` CLI.
 - Repo-local strategy output under `docs/peec/actions/`.
+
+## Research Boundary
+
+Peec remains the source of truth for visibility actions, opportunity ranking,
+and measurement. Tavily is supporting research infrastructure: use it to verify
+that recommended public targets exist, extract public page content for review,
+find current source citations, and check whether competitor or category claims
+are already supported by public evidence.
 
 ## State
 
@@ -67,3 +81,21 @@ Durable state lives in Git:
 - schemas
 
 Hermes memory is useful but not authoritative.
+
+## Infrastructure Repo Boundary
+
+Azure host provisioning lives outside this public agent-ops repo in the
+separate Hermes Cloud infrastructure repo:
+
+- `https://github.com/RidSib/Hermes-Cloud`
+
+Keep the repos separate:
+
+- `bookmo-agent-ops` owns public-safe operator prompts, MCP templates, schedules,
+  approval policy, Peec memos, ledgers, and workflow docs.
+- `Hermes-Cloud` owns Azure/Terraform host provisioning and secret-file examples.
+
+Do not copy real secrets, Terraform state, provider credentials, Peec OAuth
+tokens, Telegram bot tokens, or cloud credentials into this repo. Reference the
+infrastructure repo for host setup only, and keep runtime secrets on the target
+machine or in the cloud secret manager.

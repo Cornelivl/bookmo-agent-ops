@@ -10,11 +10,54 @@ The Mermaid source for this SVG lives at
 
 ## Install Hermes
 
+Azure VM provisioning is tracked separately in the Hermes Cloud infrastructure
+repo: `https://github.com/RidSib/Hermes-Cloud`. Use that repo for Terraform and
+host bootstrap work; use this repo for the Bookmo operator prompts, schedules,
+MCP templates, and public-safe outputs.
+
 ```bash
 curl -fsSL https://raw.githubusercontent.com/NousResearch/hermes-agent/main/scripts/install.sh | bash
 hermes setup
 hermes model
 hermes doctor
+```
+
+## Model Policy
+
+The local Hermes validation host keeps OpenAI Codex `gpt-5.5` as the default
+model for Peec operator work.
+
+Use the default for:
+
+- Peec MCP reads, weekly strategy memos, and action-ledger updates.
+- Repo edits, GitHub issue/PR drafting, and workflow automation.
+- Work where Codex tool use and local coding behavior are the important part.
+
+Use Claude only as an explicit switch, not as the default:
+
+- `/model opus` for independent strategy critique, positioning review,
+  red-team review, or narrative-heavy synthesis.
+- `/model sonnet` for lower-cost Claude review, copy critique, and second-pass
+  content feedback.
+
+Claude requires Anthropic auth on the Hermes host. Store the credential only in
+local Hermes auth or `~/.hermes/.env`; never commit it to this repo.
+
+```bash
+hermes auth add anthropic
+# or add ANTHROPIC_API_KEY to ~/.hermes/.env
+```
+
+The local host also defines these model aliases in `~/.hermes/config.yaml`:
+
+```yaml
+model_aliases:
+  opus:
+    model: claude-opus-4-6
+    provider: anthropic
+  sonnet:
+    model: claude-sonnet-4-6
+    provider: anthropic
 ```
 
 ## Configure Peec MCP
@@ -55,6 +98,31 @@ If config changes while Hermes is running:
 /reload-mcp
 ```
 
+## Configure Tavily MCP
+
+Merge `hermes/config/mcp/tavily.yaml` into `~/.hermes/config.yaml`.
+Tavily is used for public web research that supports Peec recommendations:
+source validation, public citation gathering, current SERP context, and page
+content extraction.
+
+Prefer OAuth against `https://mcp.tavily.com/mcp/`. Tavily also supports API-key
+configuration, but do not commit an API key or an API-key-bearing MCP URL. If a
+Hermes host cannot complete OAuth, store `TAVILY_API_KEY` only in
+`~/.hermes/.env` and adapt the host-local config outside this repo.
+
+After merging the template, start Hermes and verify:
+
+```text
+Tell me which Tavily MCP tools are available.
+Search the public web for Bookmo AI and summarize the top public sources.
+```
+
+If config changes while Hermes is running:
+
+```text
+/reload-mcp
+```
+
 ## Create Weekly Job
 
 Use the command in `hermes/config/schedules/weekly-peec-visibility.md`.
@@ -75,3 +143,11 @@ docs/peec/actions/YYYY-MM-DD.md
 
 The memo should end with approval questions before issue creation, PR drafting,
 outreach, publishing, or public posting.
+
+## Repo Boundary
+
+- Keep Azure/Terraform provisioning in `https://github.com/RidSib/Hermes-Cloud`.
+- Keep Bookmo operator instructions, schedules, public-safe reports, and action
+  ledgers in this repo.
+- Only commit `.example` secret files. Real Telegram, model-provider, Peec,
+  GitHub, cloud, or OAuth secrets stay out of Git.
